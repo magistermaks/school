@@ -1,5 +1,5 @@
 
-// PP0504D.cpp
+// GLUTTON.cpp
 
 #include <iostream>
 
