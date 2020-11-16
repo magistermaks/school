@@ -14,7 +14,7 @@ int main(){
 
 		std::cin >> n >> m;
 
-		int time, units = 0, residue = 0;
+		long time, units = 0, residue = 0;
 
 		for( size_t i = 0; i < n; i ++ ) {
 
