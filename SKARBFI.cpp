@@ -2,6 +2,7 @@
 // SKARBFI.cpp
 
 #include <iostream>
+#include <cmath>
 
 #define NORTH 0
 #define SOUTH 1
@@ -56,11 +57,11 @@ int main(){
 		}else{
 
 			if( y != 0 ) {
-				std::cout << (y > 0 ? STR(NORTH) : STR(SOUTH)) << " " << abs(y) << std::endl;
+				std::cout << (y > 0 ? STR(NORTH) : STR(SOUTH)) << " " << std::abs(y) << std::endl;
 			}
 
 			if( x != 0 ) {
-				std::cout << (x > 0 ? STR(EAST) : STR(WEST)) << " " << abs(x) << std::endl;
+				std::cout << (x > 0 ? STR(EAST) : STR(WEST)) << " " << std::abs(x) << std::endl;
 			}
 
 		}
