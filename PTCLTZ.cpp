@@ -2,7 +2,6 @@
 // PTCLTZ.cpp
 
 #include <iostream>
-#include <cmath>
 
 #define BEGIN void test(); int main() { size_t t; std::cin >> t; while ( t --> 0 ) test(); } void test()
 
