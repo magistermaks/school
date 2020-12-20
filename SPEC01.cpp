@@ -1,58 +1,25 @@
-
-#include <vector>
 #include <iostream>
 
-std::vector<std::vector<int>> map;
+int main() {
 
-long area_sum( int x1, int y1, int x2, int y2 ) {
-	long sum = 0;
+    int n;
+    std::cin >> n;
 
-	for( int x = x1; x < x2; x ++ ) for( int y = y1; y < y2; y ++ ) {
-		sum += map[y][x];
-	}
+    int a[n][n] = {0}, sum = 0;
 
-	return sum;
-}
+    for( int y = 0; y < n; y++ ) {
+        for( int x = 0; x < n; x++ ) {
 
-long recursive_sum( int x1, int y1, int x2, int y2 ) {
+            std::cin >> a[x][y];
 
-	if( y2 - y1 <= 1 || x2 - x1 <= 1 ) return map[y1][x1];
+            for( int y1 = y, x1 = x; y1 >= 0; x1 > 0 ? x1 -- : y1 --- (x1 = x) ) {
+            	for( int y2 = y1, x2 = x1; y2 <= y; x2 < x ? x2 ++ : y2 +++ (x2 = x1) ) {
+            		sum += a[x2][y2];
+            	}
+            }
 
-	int stripes = 0;
+        }
+    }
 
-	for( int x = x1; x < x2; x ++ ) {
-		stripes += area_sum( x, y1, x + 1, y2 );
-	}
-
-	for( int y = y1; y < y2; y ++ ) {
-		stripes += area_sum( x1, y, x2, y + 1 );
-	}
-
-	return  + recursive_sum( x1, y1, x2 - 1, y2 - 1 )
-			+ recursive_sum( x1 + 1, y1 + 1, x2, y2 )
-			+ recursive_sum( x1 + 1, y1, x2, y2 - 1 )
-			+ recursive_sum( x1, y1 + 1, x2 - 1, y2 )
-			+ stripes + area_sum( x1, y1, x2, y2 );
-
-}
-
-int main () {
-
-	int s;
-	std::cin >> s;
-
-	for( int a = 0; a < s; a ++ ) {
-		std::vector<int> v2;
-
-		for( int b = 0; b < s; b ++ ) {
-			int v;
-			std::cin >> v;
-			v2.push_back( v );
-		}
-
-		map.push_back( v2 );
-	}
-
-	std::cout << recursive_sum( 0, 0, s, s ) << std::endl;
-
+    std::cout << sum;
 }
