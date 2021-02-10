@@ -69,7 +69,7 @@ int main() {
 
 		if( weight <= maximum && value > high ) {
 #ifdef DEBUG
-			std::cout << "Potential mask found! at: " << std::bitset<sizeof(unsigned long long) * 8>(iter) << ", value: " << value << std::endl;
+			std::cout << "Potential mask found! at: " << std::bitset<sizeof(bitfield) * 8>(iter) << ", value: " << value << std::endl;
 #endif
 
 			if( validate( iter, array, count, a, b, &key, &result ) ) {
