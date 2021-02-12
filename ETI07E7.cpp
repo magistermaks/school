@@ -36,7 +36,7 @@ int main() {
 	}
 
 	int maximum = a + b;
-	bitfield iter = std::pow(2, n);
+	bitfield iter = std::pow(2, n) - 1;
 	int size = 0;
 
 	// results
@@ -169,6 +169,10 @@ bool validate( bitfield selection, pair* input, int count, int max_a, int max_b,
 #ifdef DEBUG
 		std::cout << " * Mask " << (flag ? "verified" : "discarded") << "!" << std::endl << std::endl;
 #endif
+
+	if( !flag ) {
+		delete[] array;
+	}
 
 	return flag;
 }
