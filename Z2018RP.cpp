@@ -14,7 +14,7 @@ int lis( int arr[], int n) {
 	for( int i = 1; i < n; i++ ) {
 		a = lis(arr, i);
 		if( arr[i - 1] < arr[n - 1] && a + 1 > b ) {
-            b = a + 1;
+			b = a + 1;
 		}
 	}
 
