@@ -3858,17 +3858,17 @@ int main() {
 
 	std::string code = ""
 			"   #{ "
-			"\n		#outln << #{"
-			"\n 		first; set a"
-			"\n 		first; set f << 1"
-			"\n 		set a << a << @"
-			"\n 		"
-			"\n 		end; #final << (<< f) << #{"
-			"\n 			set f << ((f :: 0 * (a :: 0 - @ + 1)) / @)"
-			"\n 			#again << #(@ + 1) << #[true] << (@ < a :: 1)"
-			"\n 		} << #1 << #[true] << (1 !> a :: 1)"
-			"\n 	} << #number << #in << null << null "
-			"\n	} << #call << #number << #in << null";
+			"\n     #outln << #{"
+			"\n         first; set a"
+			"\n         first; set f << 1"
+			"\n         set a << a << @"
+			"\n         "
+			"\n         end; #final << (<< f) << #{"
+			"\n             set f << ((f :: 0 * (a :: 0 - @ + 1)) / @)"
+			"\n             #again << #(@ + 1) << #[true] << (@ < a :: 1)"
+			"\n         } << #1 << #[true] << (1 !> a :: 1)"
+			"\n     } << #number << #in << null << null "
+			"\n } << #call << #number << #in << null";
 
 	auto buf = seq::Compiler::compile( code );
 	seq::ByteBuffer bb( buf.data(), buf.size() );
