@@ -5,7 +5,7 @@ int main() {
 	int t;
 	std::cin >> t;
 
-	for( int i = 0; i < t; i++ ) {
+	while( t --> 0 ) {
 
 		int a11, a12, a21, a22, a31, a32;
 
